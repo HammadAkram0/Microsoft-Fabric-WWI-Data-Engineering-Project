@@ -11,7 +11,7 @@ This solution showcases how multiple data sources (**on-prem SQL**, **SharePoint
 **Key Highlights:**
 
 * Scalable ingestion using **Dataflows** and **Pipelines**
-* Centralized data modeling in a **Lakehouse**
+* Centralized data modeling in a **Lakehouse & Data warehouse**
 * Reporting via a **Power BI dashboard** with a star-schema-based semantic model
 * Best practices in structuring, versioning, and documenting a **Microsoft Fabric** project
 
