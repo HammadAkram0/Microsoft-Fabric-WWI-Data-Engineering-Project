@@ -1,117 +1,150 @@
-WWI Sales Data Engineering Project Documentation
+# **WWI Sales Data Engineering Project Documentation**
 
-This repository contains a complete end-to-end implementation of a Sales Data Engineering solution for Wide World Importers (WWI) using Microsoft Fabric. The project demonstrates real-world enterprise data engineering concepts, from ingestion to reporting, leveraging modern, scalable architecture.
+This repository contains a complete end-to-end implementation of a **Sales Data Engineering** solution for **Wide World Importers (WWI)** using **Microsoft Fabric**. The project demonstrates real-world enterprise data engineering concepts, from ingestion to reporting, leveraging modern, scalable architecture.
 
-1. ✨ Project Overview
+---
 
-This solution showcases how multiple data sources (on-prem SQL, SharePoint, file uploads) can be unified into a Lakehouse architecture for downstream analytics using Power BI.
+## ⭐ **1. Project Overview**
 
-It follows:
+This solution showcases how multiple data sources (**on-prem SQL**, **SharePoint**, **file uploads**) can be unified into a **Lakehouse** architecture for downstream analytics using **Power BI**.
 
-Scalable ingestion using Dataflows and Pipelines
+**Key Highlights:**
 
-Centralized data modeling in a Lakehouse
+* Scalable ingestion using **Dataflows** and **Pipelines**
+* Centralized data modeling in a **Lakehouse**
+* Reporting via a **Power BI dashboard** with a star-schema-based semantic model
+* Best practices in structuring, versioning, and documenting a **Microsoft Fabric** project
 
-Reporting via a Power BI dashboard with a star-schema-based semantic model
+---
 
-Best practices in structuring, versioning, and documenting a Microsoft Fabric-based project
+## 🧭 **2. Architecture Overview**
 
-2. 📏 Architecture Overview
+![Architecture Diagram](docs/images/architecture-overview.png)
 
+> *Arrows indicate the data flow across stages. All assets are created, managed, and versioned in GitHub.*
 
+### 🧩 **Architecture Components:**
 
-Arrows indicate the data flow across stages. All assets are created, managed, and versioned in GitHub.
+* **Dataflows & Pipelines:** Ingest from SharePoint and SQL Server
+* **Lakehouse:** OneLake-based scalable storage for structured/semi-structured data
+* **Semantic Model:** Star schema model with facts and dimensions for performance
+* **Power BI Reports:** Dynamic visualizations for business stakeholders
 
-Components:
+---
 
-Dataflows & Pipelines: Ingest from SharePoint, SQL Server
+## 🔄 **3. Step-by-Step Project Workflow**
 
-Lakehouse: OneLake-based scalable storage for structured/semi-structured data
+Each stage is mapped to a corresponding folder in the repository and will include a screenshot.
 
-Semantic Model: Star schema model with facts and dimensions for performance
+### 3.1 **Ingestion**
 
-Power BI Reports: Dynamic visualizations for business stakeholders
+**Objective:** Bring raw data from SharePoint and SQL Server into the Fabric workspace
 
-3. 🔄 Step-by-Step Project Workflow
+* **Tools:** Fabric Dataflows Gen2 and Pipelines
+* **Output:** Data stored as tables in Lakehouse Bronze layer
 
-Each stage below is mapped to a corresponding folder in the repository and is illustrated via screenshots.
+**Steps:**
 
-3.1 Ingestion
+1. Create pipelines to connect on-prem SQL and SharePoint
+2. Define transformations in Dataflows (if needed)
+3. Export pipeline/dataflow JSON to `/ingestion/`
 
-Objective: Bring raw data from SharePoint and SQL Server into the Fabric workspace
+📷 *Screenshot Placeholder:* `docs/images/ingestion-pipeline.png`
 
-Tool: Fabric Dataflows Gen2 and Pipelines
+---
 
-Output: Data stored as tables in Lakehouse Bronze layer
+### 3.2 **Lakehouse**
 
-Steps:
+**Objective:** Store curated data for analytics
 
-Create pipelines to connect on-prem SQL and SharePoint
+* **Tool:** Microsoft Fabric Lakehouse
+* **Output:** Star schema tables in Silver/Gold zones
 
-Define transformations in Dataflows (if needed)
+**Steps:**
 
-Export pipeline/dataflow JSON to /ingestion/
+1. Create a new Lakehouse (e.g., `WWILakehouse`)
+2. Load ingested data into tables
+3. Create derived tables and relationships (Fact + Dimension)
 
-Screenshot Placeholder: docs/images/ingestion-pipeline.png
+**Key Tables:**
 
-3.2 Lakehouse
+* `Fact_Order_Line`
+* `wwi_Sales_Orders`
+* `Dim_Customer`
+* `Dim_Countries`
+* `Dim_Cities`
+* `Dim_Date`
 
-Objective: Store curated data for analytics
+📷 *Screenshot Placeholder:* `docs/images/lakehouse-structure.png`
 
-Tool: Microsoft Fabric Lakehouse
+---
 
-Output: Star schema tables in Silver/Gold zones
+### 3.3 **Semantic Model**
 
-Steps:
+**Objective:** Build a reusable, performance-optimized model for reporting
 
-Create a new Lakehouse (e.g., WWILakehouse)
+* **Tool:** Power BI PBIP model (Fabric-native semantic model)
 
-Load ingested data into tables
+**Steps:**
 
-Create derived tables and relationships (Fact + Dimension)
+1. Create relationships between facts and dimensions
+2. Add DAX measures (e.g., `Total Sales`, `Order Count`, `Avg Tax Rate`)
+3. Export PBIP model to `/semantic-model/`
 
-Key Tables:
+📷 *Screenshot Placeholder:* `docs/images/semantic-model.png`
 
-Fact_Order_Line
+---
 
-wwi_Sales_Orders
+### 3.4 **Power BI Dashboard**
 
-Dim_Customer, Dim_Countries, Dim_Cities, Dim_Date
+**Objective:** Deliver a business-friendly interactive reporting experience
 
-Screenshot Placeholder: docs/images/lakehouse-structure.png
+* **Tool:** Power BI
+* **Output:** Deployed report file (`.pbip`) in `/pbi/`
 
-3.3 Semantic Model
+**Dashboard Highlights:**
 
-Objective: Build a reusable, performance-optimized model for reporting
+* Sales trend by time
+* Revenue by geography
+* Orders by product size
+* Top 10 customers by revenue
 
-Tool: Power BI PBIP model (fabric-native semantic model)
+📷 *Screenshot Placeholder:* `docs/images/pbi-dashboard.png`
 
-Steps:
+---
 
-Create relationships between facts and dimensions
+## 📁 **4. Repository Structure**
 
-Add DAX measures (e.g., Total Sales, Order Count, Avg Tax Rate)
+```bash
+/
+├── ingestion/               # Pipelines and Dataflows JSON
+├── lakehouse/               # Lakehouse tables & structure exports
+├── semantic-model/          # Semantic model (PBIP)
+├── pbi/                     # Power BI dashboard files
+├── docs/images/             # Screenshots & architecture diagram
+└── README.md                # Root documentation (this file)
+```
 
-Export PBIP model to /semantic-model/
+---
 
-Screenshot Placeholder: docs/images/semantic-model.png
+## ✅ **5. Best Practices Followed**
 
-3.4 Power BI Dashboard
+* Structured folders per Fabric domain
+* `snake_case` naming convention
+* Documentation-first approach
+* Screenshots embedded for clarity
+* Modular, reusable, and version-controlled components
+* Star schema modeling with natural keys
 
-Objective: Deliver a business-friendly interactive reporting experience
+---
 
-Tool: Power BI
+## 🚀 **6. Future Enhancements**
 
-Output: Deployed report file (.pbip) in /pbi/
+* Integrate data quality checks (DQ layer)
+* Add CI/CD for Power BI model deployment
+* Auto-refresh configuration & email alerts
+* Role-based security on semantic model
 
-Report Highlights:
+---
 
-Sales trend by time
-
-Revenue by geography
-
-Orders by product size
-
-Top 10 customers by revenue
-
-Screenshot Placeholder: docs/images/pbi-dashboard.png
+*Last updated: **July 28, 2025***
