@@ -1,4 +1,4 @@
-# **WWI Sales Data Engineering Project Documentation**
+# **Microsoft Fabric Data Engineering End to End Project**
 
 This repository contains a complete end-to-end implementation of a **Sales Data Engineering** solution for **Wide World Importers (WWI)** using **Microsoft Fabric**. The project demonstrates real-world enterprise data engineering concepts, from ingestion to reporting, leveraging modern, scalable architecture.
 
