@@ -49,7 +49,7 @@ Each stage is mapped to a corresponding folder in the repository and will includ
 2. Define transformations in Dataflows (if needed)
 3. Export pipeline/dataflow JSON to `/ingestion/`
 
-![Ingestion Pipeline](docs/images/ingestion-pipeline.png)
+![Ingestion Pipeline](Data%20Ingestion/Fabric%20Data%20Pipeline.png)
 
 ---
 
