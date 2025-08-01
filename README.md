@@ -130,10 +130,8 @@ Each stage is mapped to a corresponding folder in the repository and will includ
 ## ✅ **5. Best Practices Followed**
 
 * Structured folders per Fabric domain
-* `snake_case` naming convention
 * Documentation-first approach
 * Screenshots embedded for clarity
-* Modular, reusable, and version-controlled components
 * Star schema modeling with natural keys
 
 
