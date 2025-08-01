@@ -127,7 +127,6 @@ Each stage is mapped to a corresponding folder in the repository and includes a 
 /
 ├── ingestion/               # Pipelines and Dataflows JSON
 ├── lakehouse/               # Lakehouse tables & structure exports
-├── semantic-model/          # Semantic model (PBIP)
 ├── pbi/                     # Power BI dashboard files
 ├── docs/images/             # Screenshots & architecture diagram
 └── README.md                # Root documentation (this file)
