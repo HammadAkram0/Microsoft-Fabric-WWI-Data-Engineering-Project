@@ -75,7 +75,7 @@ Each stage is mapped to a corresponding folder in the repository and will includ
 * `Dim_Cities`
 * `Dim_Date`
 
-📷 *Screenshot Placeholder:* `docs/images/lakehouse-structure.png`
+![Lakehouse Structure](lakehouse/Lakehouse%20tables.png)
 
 ---
 
