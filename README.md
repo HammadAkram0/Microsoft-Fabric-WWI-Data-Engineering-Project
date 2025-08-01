@@ -4,7 +4,7 @@ This repository contains a complete end-to-end implementation of a **Sales Data 
 
 ---
 
-## 🧭 **Architecture Overview**
+## **Architecture Overview**
 
 ![Architecture Diagram](Architecture%20Diagram%20MS%20Fabric%20WWI.png)
 
