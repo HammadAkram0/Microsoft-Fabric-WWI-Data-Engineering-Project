@@ -91,7 +91,7 @@ Each stage is mapped to a corresponding folder in the repository and will includ
 2. Add DAX measures (e.g., `Total Sales`, `Order Count`, `Avg Tax Rate`)
 3. Export PBIP model to `/semantic-model/`
 
-📷 *Screenshot Placeholder:* `docs/images/semantic-model.png`
+![Semantic Model Architecture](Power%20BI%20Dashboard/Semantic%20Model%20Architecture.png)
 
 ---
 
@@ -109,7 +109,7 @@ Each stage is mapped to a corresponding folder in the repository and will includ
 * Orders by product size
 * Top 10 customers by revenue
 
-📷 *Screenshot Placeholder:* `docs/images/pbi-dashboard.png`
+![Power BI Dashboard](Power%20BI%20Dashboard/WWI%20Sales%20Analysis%20Dashboard.png)
 
 ---
 
@@ -136,14 +136,6 @@ Each stage is mapped to a corresponding folder in the repository and will includ
 * Modular, reusable, and version-controlled components
 * Star schema modeling with natural keys
 
----
-
-## 🚀 **6. Future Enhancements**
-
-* Integrate data quality checks (DQ layer)
-* Add CI/CD for Power BI model deployment
-* Auto-refresh configuration & email alerts
-* Role-based security on semantic model
 
 ---
 
