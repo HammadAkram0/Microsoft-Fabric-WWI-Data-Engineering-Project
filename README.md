@@ -19,9 +19,9 @@ This solution showcases how multiple data sources (**on-prem SQL**, **SharePoint
 
 ## 🧭 **2. Architecture Overview**
 
-![Architecture Diagram](docs/images/architecture-overview.png)
+![Architecture Diagram](Architecture%20Diagram%20MS%20Fabric%20WWI.png)
 
-> *Arrows indicate the data flow across stages. All assets are created, managed, and versioned in GitHub.*
+> *Arrows indicate the data flow across stages.*
 
 ### 🧩 **Architecture Components:**
 
